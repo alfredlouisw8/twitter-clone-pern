@@ -1,0 +1,59 @@
+@import "../../variables.scss";
+
+.follow-suggestion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  > div {
+    display: flex;
+    align-items: center;
+  }
+
+  .avatar {
+    width: 49px;
+    height: 49px;
+    background: $gray;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+
+    > strong {
+      font-size: 15px;
+    }
+    > span {
+      font-size: 15px;
+      color: $gray;
+    }
+
+    &:hover {
+      > strong {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .follow-button {
+    padding: 6px 17px;
+  }
+
+  .close-icon {
+    padding: 7px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+
+    > svg path {
+      fill: $gray;
+    }
+
+    &:hover {
+      background: $twitter-dark-hover;
+    }
+  }
+}

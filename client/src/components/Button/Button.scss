@@ -1,0 +1,39 @@
+@import "../../variables.scss";
+
+.button {
+  padding: 13px;
+  border-radius: 25px;
+
+  font-weight: bold;
+  font-size: 15px;
+
+  cursor: pointer;
+  outline: 0;
+}
+.solid {
+  background: $twitter;
+  color: $white;
+  border: none;
+
+  &:hover {
+    background: $twitter-light-hover;
+  }
+}
+
+.outline {
+  background: transparent;
+  color: $twitter;
+  border: 1px solid $twitter;
+
+  &:hover {
+    background: $twitter-dark-hover;
+  }
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  &:hover {
+    background: $twitter;
+  }
+}

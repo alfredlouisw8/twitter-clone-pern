@@ -1,0 +1,46 @@
+@import "../../variables.scss";
+
+.trend-suggestion {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .info {
+    display: flex;
+    flex-direction: column;
+
+    > strong {
+      font-size: 15px;
+    }
+    > span {
+      font-size: 14px;
+      color: $gray;
+    }
+
+    &:hover {
+      > strong {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .more-icon {
+    padding: 5px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+
+    > svg path {
+      fill: $gray;
+    }
+
+    &:hover {
+      background: $twitter-dark-hover;
+
+      > svg path {
+        fill: $twitter;
+      }
+    }
+  }
+}

@@ -1,0 +1,158 @@
+@import "../../variables.scss";
+
+.home-page {
+  .top-header {
+    z-index: 5;
+    position: sticky;
+    top: 0;
+    background: $primary;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    text-align: left;
+
+    padding: 5px 16px;
+    border-bottom: 1px solid $outline;
+
+    > strong {
+      font-size: 19px;
+      font-weight: 700;
+    }
+    .flare-icon {
+      padding: 10px;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      margin-left: 5px;
+
+      > svg path {
+        fill: $twitter;
+      }
+
+      &:hover {
+        background: $twitter-dark-hover;
+      }
+    }
+  }
+
+  .tweet-box {
+    display: flex;
+    flex-direction: column;
+
+    padding: 14px 16px;
+
+    border-bottom: 1px solid $outline;
+
+    max-width: 100%;
+
+    .body {
+      display: flex;
+      margin-top: 3px;
+
+      position: relative;
+
+      .avatar {
+        width: 49px;
+        height: 49px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        background: $gray;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 2px;
+        padding-left: 10px;
+
+        textarea {
+          padding-left: 10px;
+          font-size: 20px;
+          resize: none;
+          width: 100%;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .reply-container {
+          border-bottom: 1px solid $outline;
+          padding-bottom: 10px;
+          margin-bottom: 10px;
+          margin-top: 10px;
+
+          .reply-setting {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            border-radius: 16px;
+            width: 160px;
+
+            svg path {
+              fill: $twitter;
+            }
+
+            span {
+              margin-left: 5px;
+              color: $twitter;
+              font-size: 13px;
+              font-weight: 700;
+            }
+
+            &:hover {
+              background: $twitter-dark-hover;
+            }
+          }
+        }
+
+        .bottom-content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .icon-container {
+            display: flex;
+            align-items: center;
+
+            .icon {
+              padding: 7px;
+              border-radius: 100%;
+              display: flex;
+              align-items: center;
+
+              > svg path {
+                fill: $twitter;
+              }
+
+              &:hover {
+                background: $twitter-dark-hover;
+              }
+            }
+          }
+
+          .tweet-length {
+            color: $gray;
+            margin: 0 16px;
+            padding-right: 16px;
+            border-right: 1px solid $outline;
+          }
+
+          .max-length {
+            color: $like;
+          }
+        }
+      }
+    }
+  }
+
+  .divider {
+    background: $secondary;
+    height: 10px;
+    width: 100%;
+    border-bottom: 1px solid $outline;
+  }
+}

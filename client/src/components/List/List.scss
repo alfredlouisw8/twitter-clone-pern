@@ -1,0 +1,65 @@
+@import "../../variables.scss";
+
+.list {
+  display: flex;
+  flex-direction: column;
+  background: $secondary;
+  border-radius: 14px;
+
+  .top-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .item {
+    padding: 10px 16px;
+
+    & + div {
+      border-top: 1px solid $outline;
+    }
+
+    &:first-child {
+      &:hover {
+        background: $secondary;
+        border-radius: 14px 14px 0 0;
+      }
+    }
+
+    &:last-child {
+      padding-bottom: 17px;
+      &:hover {
+        background: $outline;
+        border-radius: 0 0 14px 14px;
+      }
+    }
+
+    &:hover {
+      background: $outline;
+    }
+
+    .title {
+      font-weight: 700;
+      font-size: 19px;
+    }
+
+    .show-more {
+      color: $twitter;
+    }
+
+    .setting-icon {
+      padding: 7px;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+
+      > svg path {
+        fill: $twitter;
+      }
+
+      &:hover {
+        background: $twitter-dark-hover;
+      }
+    }
+  }
+}

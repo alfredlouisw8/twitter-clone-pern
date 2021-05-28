@@ -1,0 +1,187 @@
+@import "../../variables.scss";
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
+}
+
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+
+.profile-page {
+  display: flex;
+  flex-direction: column;
+
+  max-height: 100%;
+  overflow-y: auto;
+
+  scrollbar-width: none; /** Firefox */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .top-header {
+    z-index: 5;
+    position: sticky;
+    top: 0;
+    background: $primary;
+
+    display: flex;
+    align-items: center;
+
+    text-align: left;
+
+    padding: 8px 0 9px 13px;
+    border-bottom: 1px solid $outline;
+
+    > button {
+      padding: 8px;
+      border-radius: 50%;
+
+      outline: 0;
+      cursor: pointer;
+
+      &:hover {
+        background: $twitter-dark-hover;
+      }
+    }
+
+    .back-icon {
+      width: 24px;
+      height: 24px;
+
+      fill: $twitter;
+    }
+
+    .profile-info {
+      margin-left: 17px;
+
+      display: flex;
+      flex-direction: column;
+
+      > strong {
+        font-size: 19px;
+      }
+      > span {
+        font-size: 15px;
+        color: $gray;
+      }
+    }
+  }
+
+  .banner {
+    flex-shrink: 0;
+
+    width: 100%;
+    height: min(33vw, 199px);
+
+    background: $twitter;
+
+    position: relative;
+
+    .avatar {
+      width: max(45px, min(135px, 22vw));
+      height: max(45px, min(135px, 22vw));
+
+      border: 3.75px solid $primary;
+      background: $gray;
+      border-radius: 50%;
+
+      position: absolute;
+      bottom: max(-60px, -10vw);
+      left: 15px;
+    }
+  }
+
+  .profile-data {
+    padding: min(calc(10vw + 7px), 67px) 16px 0;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    > h1 {
+      font-weight: bold;
+      font-size: 19px;
+    }
+    > h2 {
+      font-weight: normal;
+      font-size: 15px;
+
+      color: $gray;
+    }
+    > p {
+      font-size: 15px;
+      margin-top: 11px;
+      margin-bottom: 10px;
+
+      > a {
+        text-decoration: none;
+        color: $twitter;
+      }
+    }
+    > ul {
+      list-style: none;
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+      > li {
+        font-size: 15px;
+        color: $gray;
+
+        > svg {
+          fill: $gray;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    .followage {
+      display: flex;
+      margin: 10px 0;
+
+      > span {
+        font-size: 15px;
+        color: $gray;
+
+        & + span {
+          margin-left: 20px;
+        }
+      }
+    }
+
+    .edit-profile {
+      position: absolute;
+      top: 2vw;
+      right: 7px;
+
+      padding: 4px 16px;
+      font-size: 13px;
+
+      @media (min-width: 320px) {
+        top: 10px;
+        padding: 10px 19px;
+        font-size: 15px;
+      }
+    }
+  }
+
+  .tab {
+    margin-top: 10px;
+    padding: 11px 0 15px;
+    text-align: center;
+
+    font-weight: bold;
+    font-size: 15px;
+
+    outline: 0;
+    cursor: pointer;
+
+    color: $twitter;
+    border-bottom: 2px solid $twitter;
+
+    &:hover {
+      background: $twitter-dark-hover;
+    }
+  }
+}

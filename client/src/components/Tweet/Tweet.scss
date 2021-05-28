@@ -1,0 +1,220 @@
+@import "../../variables.scss";
+
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
+}
+
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+.tweet {
+  display: flex;
+  flex-direction: column;
+
+  padding: 14px 16px;
+
+  border-bottom: 1px solid $outline;
+
+  max-width: 100%;
+
+  .body {
+    display: flex;
+    margin-top: 3px;
+
+    position: relative;
+
+    .avatar {
+      width: 49px;
+      height: 49px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background: $gray;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+
+      width: 100%;
+      margin-top: 2px;
+      padding-left: 59px;
+
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 15px;
+        white-space: nowrap;
+
+        .tweet-info {
+          display: flex;
+          align-items: center;
+          > strong {
+            margin-right: 5px;
+          }
+
+          > span,
+          time {
+            color: $gray;
+          }
+
+          > strong,
+          span {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+
+          .dot {
+            background: $gray;
+            width: 2px;
+            height: 2px;
+            margin: 0 10px;
+          }
+        }
+
+        .tweet-action {
+          display: flex;
+          .icon-container {
+            display: flex;
+            margin-right: 5px;
+            padding: 10px;
+            border-radius: 100%;
+
+            > svg path {
+              color: $gray;
+            }
+
+            &:nth-child(1) {
+              &:hover {
+                background: $retweet-hover;
+
+                svg path {
+                  fill: $retweet;
+                }
+              }
+            }
+            &:nth-child(2) {
+              &:hover {
+                background: $like-hover;
+
+                svg path {
+                  fill: $like;
+                }
+              }
+            }
+            .icon {
+              width: 19px;
+              height: 19px;
+            }
+          }
+        }
+      }
+
+      .description {
+        font-size: 14px;
+        margin-top: 4px;
+        margin-bottom: 0;
+      }
+
+      .icons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 11px auto 0;
+        width: 100%;
+
+        > div {
+          cursor: pointer;
+
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+
+        .status {
+          display: flex;
+          align-items: center;
+
+          font-size: 14px;
+
+          .icon-container {
+            display: flex;
+            margin-right: 5px;
+            padding: 10px;
+            border-radius: 100%;
+
+            > svg path {
+              color: $gray;
+            }
+          }
+
+          &:nth-child(1),
+          &:nth-child(4) {
+            &,
+            > svg path {
+              color: $gray;
+            }
+
+            &:hover {
+              color: $twitter;
+              > .icon-container {
+                background: $twitter-dark-hover;
+              }
+
+              svg path {
+                fill: $twitter;
+              }
+            }
+          }
+          &:nth-child(2) {
+            color: $gray;
+
+            > svg path {
+              fill: $gray;
+            }
+
+            &:hover {
+              color: $retweet;
+              > .icon-container {
+                background: $retweet-hover;
+              }
+
+              svg path {
+                fill: $retweet;
+              }
+            }
+          }
+          &:nth-child(3) {
+            color: $gray;
+
+            > svg {
+              fill: $like;
+            }
+
+            &:hover {
+              color: $like;
+              > .icon-container {
+                background: $like-hover;
+              }
+
+              svg path {
+                fill: $like;
+              }
+            }
+          }
+
+          .icon {
+            width: 19px;
+            height: 19px;
+          }
+        }
+      }
+    }
+  }
+}
